@@ -1,0 +1,6 @@
+56c56,58
+<   const instance = await ProtocolDriver.newSession(params, modifier, prototype, commandWrapper);
+---
+>   const instance = params.sessionId 
+>     ? await ProtocolDriver.attachToSession(params, modifier, prototype, commandWrapper)
+>     : await ProtocolDriver.newSession(params, modifier, prototype, commandWrapper);

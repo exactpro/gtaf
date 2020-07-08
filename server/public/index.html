@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+        integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <title>iframe</title>
+</head>
+
+<body>
+    <form action="/api" method="post" id="form">
+        <div class="row">
+            <div class="col-xs-4" style="display: none;">
+                <h3>Browser</h3>
+                <div class="browsers-radio"><label for="chrome-radio"><strong>Chrome</strong></label> <input
+                        type="radio" value="chrome" name="browser" id="chrome-radio"></div>
+                <div class="browsers-radio"><label for="edge-radio"><strong>Edge</strong></label> <input type="radio"
+                        value="edge" name="browser" id="edge-radio"></div>
+            </div>
+            <div class="col-xs-6">
+                
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3">
+                <div><label for="passed-radio"><strong>Passed</strong> </label> <input
+                        type="radio" value="passed" name="status" id="passed-radio"></div>
+                <div><label for="in-progress-radio"><strong>In Progress</strong></label> <input
+                        type="radio" value="in-progress" name="status" id="in-progress-radio"></div>
+                <div><label for="failed-radio"><strong>Failed</strong></label> <input type="radio"
+                        value="failed" name="status" id="failed-radio"></div>
+                <div><label for="blocked-radio"><strong>Execution Blocked</strong></label> <input
+                        type="radio" value="blocked" name="status" id="blocked-radio"></div>
+                <div><label for="not-started-radio"><strong>Not started</strong></label> <input
+                        type="radio" value="not-started" name="status" id="not-started-radio"></div>
+                <div id="update-status"></div>
+            </div>
+            <div class="col-xs-9">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td><strong>Blocked By: </strong></td>
+                            <td><input type="text" name="blockedBy" placeholder="" id="blocked-by"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Failed By: </strong></td>
+                            <td><input type="text" name="failedBy" placeholder="" id="failed-by"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Comment: </strong></td>
+                            <td><textarea rows="2" cols="50" name="comment" placeholder="" id="comment"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><div class="jira"></div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <input type="hidden" name="id" value="" id="test-id">
+    </form>
+
+    <!-- Modal -->
+    <div class="modal" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+</body>
+
+</html>

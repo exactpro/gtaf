@@ -1,0 +1,60 @@
+{
+  "name": "TAF",
+  "version": "1.4.3",
+  "description": "",
+  "main": "wdio.conf.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha ./framework_tests/",
+    "test-win": " SET=ie 'C:\\Program Files\\nodejs\\node.exe' node_modules\\@wdio\\cli\\bin\\wdio.js run wdio.conf.js --suite nonworkflow",
+    "copy-it": "SET=firefox npm test -- --suite nonworkflow; SET=chrome npm test -- --suite nonworkflow; SET=ie npm test -- --suite nonworkflow;",
+    "iframe": "node ./server/index.js",
+    "allure": "./node_modules/.bin/allure serve ./test/reports/allure-results",
+    "run-smoke": "node node_modules/.bin/wdio run wdio.smoke.conf.js --suite smoke -p 4444 --env=1 --pre_set=1 --main_set=2"
+  },
+  "dependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^5.2.7",
+    "body-parser": "^1.19.0",
+    "csv-parse": "^4.8.2",
+    "csv-parser": "^2.3.1",
+    "csv-stringify": "^5.3.6",
+    "data-forge": "^1.7.7",
+    "data-forge-fs": "0.0.7",
+    "dataframe-js": "^1.4.3",
+    "datalib": "^1.9.2",
+    "deepmerge": "^4.2.2",
+    "expect": "^24.9.0",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "fastq": "^1.8.0",
+    "fecha": "^3.0.3",
+    "fetcha": "0.0.0",
+    "loglevel": "^1.6.6",
+    "mammoth": "^1.4.9",
+    "matcher": "^2.0.0",
+    "numeral": "^2.0.6",
+    "pdf-parse": "^1.1.1",
+    "pdfreader": "^1.0.7",
+    "serialize-javascript": "^2.1.2"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^5.15.2",
+    "@wdio/cli": "^5.15.2",
+    "@wdio/local-runner": "^5.15.2",
+    "@wdio/mocha-framework": "^5.15.1",
+    "@wdio/selenium-standalone-service": "^5.15.0",
+    "@wdio/spec-reporter": "^5.15.2",
+    "@wdio/sync": "^5.15.1",
+    "allure-commandline": "^2.13.0",
+    "chai": "^4.2.0",
+    "nexus-deployer": "^0.1.8",
+    "wdio-screenshot": "^0.6.0",
+    "webdriver-manager": "^12.1.7",
+    "webdriverio": "^5.15.2"
+  },
+  "author": "aorlov",
+  "license": "ISC"
+}

@@ -1,0 +1,8 @@
+107a108,114
+>         // Patch applied here
+>         const instances = payload.content.instances;
+>         this.sessionId = Object.keys(instances).reduce((a, x) => { 
+>           a[x] = instances[x].sessionId;
+>           return a;
+>         }, {});
+>         // End of patch

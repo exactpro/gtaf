@@ -1,0 +1,11 @@
+56c56,57
+<   if (config.sessionId) {
+---
+>   // Patch applied here
+>   if (config.sessionId && !(config.sessionId instanceof Object)) {
+74a76,80
+>     // Patch applied here
+>     if (config.sessionId) {
+>       options[browserName].sessionId = config.sessionId[browserName];
+>     }
+>     // End of patch

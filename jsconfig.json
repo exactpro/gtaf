@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es6",
+    "checkJs": true
+  },
+  "include": [
+    "**/*.js",
+    "**/*.json",
+    "node_modules/@wdio/sync",
+    "node_modules/@wdio/mocha-framework",
+    "*.ts"
+  ]
+}
